@@ -1,5 +1,6 @@
 package model.board;
 
+import model.move.Move;
 import model.move.Position;
 import model.piece.Piece;
 
@@ -48,5 +49,13 @@ public class ChessBoard {
         board[6] = whitesSecondLine;
         board[7] = whitesFirstLine;
         return board;
+    }
+
+
+    public void makeMove(Move move) {
+        Piece pieceToMove = getPiece(move.getStart());
+        setPiece(move.getStart(), null);
+        setPiece(move.getEnd(), pieceToMove);
+
     }
 }
