@@ -20,6 +20,10 @@ public class ChessBoard {
         this.board = board;
     }
 
+    public void setPiece(Position position, Piece piece) {
+        board[position.getY()][position.getX()] = piece;
+    }
+
 
     public Piece getPiece(Position position) {
         return board[position.getY()][position.getX()];
