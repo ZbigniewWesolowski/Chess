@@ -1,10 +1,15 @@
 package view;
 
+import model.move.Position;
+import model.piece.Piece;
+import model.board.ChessBoard;
+import model.piece.PieceColor;
+
 /**
  * Created by 100-15 on 20.05.2019.
  */
 public class ChessConsoleUtils {
-public static String boardToString (Chessboard board) {
+public static String boardToString (ChessBoard board) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < 8; i++) {
         sb.append(8 - i).append(" ");
@@ -44,7 +49,4 @@ public static String boardToString (Chessboard board) {
     }
 
 
-}
-    }
-}
 }
