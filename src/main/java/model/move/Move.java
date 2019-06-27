@@ -1,5 +1,7 @@
 package model.move;
 
+import model.board.ChessBoard;
+
 /**
  * Created by 100-15 on 23.05.2019.
  */
@@ -53,5 +55,23 @@ public class Move {
         int absVerticalShift = Math.abs(verticalShift());
         return absHorizontalShift == 0 && absVerticalShift > 0;
     }
+
+    public boolean isDiagonal () {
+        return diagonalShift() > 0;
+    }
+
+    public boolean isEmpty (Position position, ChessBoard chessBoard) {
+        return chessBoard.getPiece(position).equals(null);
+    }
+
+    @Override
+    public String toString() {
+        return "Move{" +
+                "start=" + start +
+                ", end=" + end +
+                '}';
+    }
+
+
 }
 

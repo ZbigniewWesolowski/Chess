@@ -8,6 +8,9 @@ import model.move.Move;
  */
 public class BishopMoveValidator implements MoveValidatorFactory {
     public boolean isValid(Move move, ChessBoard chessBoard) {
+        if (!(move.isDiagonal())) {
+            return false;
+        }
         return true;
     }
 }

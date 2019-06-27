@@ -9,7 +9,16 @@ import model.move.Move;
 public class KingMoveValidator implements MoveValidatorFactory {
 
     public boolean isValid(Move move, ChessBoard chessBoard) {
-        return true;
+        if (Math.abs(move.verticalShift()) == 1 && move.horizontalShift() == 0) {
+            return true;
+        }
+        if (Math.abs(move.horizontalShift()) == 1 && move.verticalShift() == 0) {
+            return true;
+        }
+        if (Math.abs(move.diagonalShift()) == 1 && !move.isVertical() && !move.isHorizontal()) {
+            return true;
+        }
+        return false;
     }
 }
 
