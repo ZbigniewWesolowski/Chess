@@ -15,7 +15,7 @@ public static String boardToString (ChessBoard board) {
         sb.append(8 - i).append(" ");
         for (int j = 0; j < 8; j++) {
             int backgroundBlockInt = j + i;
-            String backgroundBlock = backgroundBlockInt % 2 == 0 ? "\u2592" : "\u2591";
+            String backgroundBlock = backgroundBlockInt % 2 == 0 ? "\u2592 " : "\u2591 ";
             Piece currentPiece = board.getPiece(new Position(j, i));
             String pieceString = currentPiece == null ? backgroundBlock : pieceToUnicodeSymbol(currentPiece);
             sb.append(pieceString).append("|");

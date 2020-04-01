@@ -32,7 +32,7 @@ public class GameController {
             Move move = gui.splitMoveString(moveString);
             Position position = move.getStart();
             if ((board.getPiece(position).getColor().equals(currentColor))) {
-                System.out.println("To nie Twoj pionek");
+                System.out.println("This is not your pawn!");
             } else {
                     board.makeMove(move);
                     currentColor = currentColor == BLACK ? WHITE : BLACK;

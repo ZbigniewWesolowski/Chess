@@ -8,8 +8,8 @@ import model.move.Move;
  */
 public class KnightMoveValidator implements MoveValidatorFactory {
     public boolean isValid (Move move, ChessBoard chessBoard) {
-        if (!((Math.abs(move.horizontalShift()) == 2 ) && (Math.abs(move.verticalShift())) == 1))
-        || ((Math.abs(move.horizontalShift()) == 1) && (Math.abs((move.verticalShift())) == 2)))) {
+        if (!((Math.abs(move.horizontalShift()) == 2 ) && (Math.abs(move.verticalShift())) == 1)
+        || ((Math.abs(move.horizontalShift()) == 1) && (Math.abs((move.verticalShift())) == 2))) {
             return false;
         }
         return true;

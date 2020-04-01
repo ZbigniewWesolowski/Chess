@@ -10,8 +10,8 @@ import view.ConsoleChessGui;
  */
 public class Main {
     public static void main(String[] args) {
-//        ChessBoard board = ChessBoard.withDefaultPieceSetup();
-//        System.out.println(ChessConsoleUtils.boardToString(board));
+        ChessBoard board = ChessBoard.withDefaultPieceSetup();
+        System.out.println(ChessConsoleUtils.boardToString(board));
 
         ConsoleChessGui gui = new ConsoleChessGui();
         GameController gameController = new GameController(gui);

@@ -19,7 +19,7 @@ public static MoveValidatorFactory getValidator (Piece piece) {
         case BISHOP:
             return new BishopMoveValidator();
         case KNIGTH:
-            return new KingMoveValidator();
+            return new KnightMoveValidator();
     }
     return null;
 
