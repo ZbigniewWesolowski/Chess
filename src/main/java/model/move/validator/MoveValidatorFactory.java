@@ -5,8 +5,8 @@ import model.piece.Piece;
 /**
  * Created by 100-15 on 23.05.2019.
  */
-public interface MoveValidatorFactory {
-public static MoveValidatorFactory getValidator (Piece piece) {
+public class MoveValidatorFactory {
+public static MoveValidator getValidator (Piece piece) {
     switch (piece.getType()){
         case PAWN:
             return new PawnMoveValidator();

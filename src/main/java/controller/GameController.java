@@ -4,6 +4,7 @@ import model.Player;
 import model.board.ChessBoard;
 import model.move.Move;
 import model.move.Position;
+import model.move.validator.MoveValidatorFactory;
 import model.piece.Piece;
 import model.piece.PieceColor;
 import view.ChessConsoleUtils;
@@ -21,7 +22,7 @@ public class GameController {
     private ConsoleChessGui gui;
     ChessBoard board = new ChessBoard();
 
-    public void run () {
+    public void run() {
         System.out.println(ChessConsoleUtils.boardToString(board));
         Player player1 = new Player("First", WHITE);
         Player player2 = new Player("Second", BLACK);
@@ -33,17 +34,19 @@ public class GameController {
             Position position = move.getStart();
             if ((board.getPiece(position).getColor().equals(currentColor))) {
                 System.out.println("This is not your pawn!");
-            } else {
-                    board.makeMove(move);
-                    currentColor = currentColor == BLACK ? WHITE : BLACK;
-                    System.out.println(currentColor);
+            }
+            if (MoveValidatorFactory.getValidator(board.getPiece(position)).isValid(move, board)) {
+                board.makeMove(move);
+                currentColor = currentColor == BLACK ? WHITE : BLACK;
+                System.out.println(currentColor);
+            } else System.out.println("This move is not correct!");
 
-                }
 
 
-            System.out.println(ChessConsoleUtils.boardToString(board));
-        }
+        System.out.println(ChessConsoleUtils.boardToString(board));
     }
+
+}
 
     Piece[][] tab = new Piece[8][8];
 
